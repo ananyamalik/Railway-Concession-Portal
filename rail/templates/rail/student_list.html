@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+
+
+}
+.cd-main-header {
+			  position: fixed;
+			  top: 0;
+			  left: 0;
+			  width: 100%;
+			  height: 50px;
+			  background-color: #fff;
+			  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+			          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+
+			  z-index: 3;
+			}
+
+			.cd-main-header:after {
+			  /* clearfix */
+			  content: "";
+			  display: table;
+			  clear: both;
+			}
+
+			.cd-main-header__logo {
+			  float: left;
+			  margin: 13px 0 0 5%;
+			}
+
+			.cd-main-header__logo img {
+			  display: block;
+			}
+
+			@media only screen and (min-width: 768px) {
+			  .cd-main-header {
+			    height: 70px;
+			  }
+			  .cd-main-header__logo {
+			    margin: 23px 0 0 5%;
+			  }
+			}
+
+			.cd-main-nav {
+			  float: left;
+			 /* margin-right: 5%;*/
+			  width: 44px;
+			  height: 100%;
+			  background: url("../img/cd-icon-menu.svg") no-repeat center center;
+			  background-size: 44px 44px;
+			  cursor: pointer;
+			  padding-right: 30px !important
+			  ;
+
+			}
+
+			.cd-main-nav__list {
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  width: 100%;
+			  -webkit-transform: translateY(-100%);
+			      -ms-transform: translateY(-100%);
+			          transform: translateY(-100%);
+			}
+
+			.cd-main-nav__list.cd-main-nav__list--is-visible {
+			  -webkit-transform: translateY(50px);
+			      -ms-transform: translateY(50px);
+			          transform: translateY(50px);
+			}
+
+			.cd-main-nav__list a {
+			  display: block;
+			  height: 50px;
+			  line-height: 50px;
+			  padding-left: 5%;
+			  /*background: #2f292a;*/
+			  border-top: 1px solid #453c3d;
+			  /*color: #8e7d7f;*/
+			  color:black;
+			  font-size:20px;
+			}
+
+
+			.login{
+			  float: right;
+			  margin-right: 5%;
+			  width: 44px;
+			  height: 100%;
+			  background: url("../img/cd-icon-menu.svg") no-repeat center center;
+			  background-size: 44px 44px;
+			  cursor: pointer;
+			  /*padding-right: 30px;*/
+			  margin-right: 100px;
+			}
+			@media only screen and (min-width: 768px) {
+			  .cd-main-nav {
+			    /* reset style */
+			    width: auto;
+			    height: auto;
+			    background: none;
+			    cursor: auto;
+			    font-size:15px;
+				color:black;
+			  }
+			  .cd-main-nav__list {
+			    /* reset style */
+			    position: static;
+			    width: auto;
+			    -webkit-transform: translateY(0);
+			        -ms-transform: translateY(0);
+			            transform: translateY(0);
+			    line-height: 70px;
+			  }
+			  .cd-main-nav__list.cd-main-nav__list--is-visible {
+			    /* reset style */
+			    -webkit-transform: translateY(0);
+			        -ms-transform: translateY(0);
+			            transform: translateY(0);
+			  }
+			  .cd-main-nav__list li {
+			    display: inline-block;
+			    margin-left: 1em;
+			  }
+			  .cd-main-nav__list a {
+			    display: inline-block;
+			    height: auto;
+			    line-height: normal;
+			    background: transparent;
+			    padding: .6em 1em;
+			    border-top: none;
+			    color: #3d3536;
+			    text-transform: uppercase;
+			    /*font-weight: bold;*/
+
+			  }
+			  .cd-main-nav__list a:hover {
+			    color: #99a478;
+			  }
+			}
+</style>
+</head>
+<body style="background-color: #b4d7a8 ">
+
+	<header class="cd-main-header">
+		<!-- logo <div class="cd-main-header__logo"><a href="#0"><img src="cd-logo.png" alt="Logo"></a></div>-->
+
+		<nav class="cd-main-nav js-main-nav">
+			<ul class="cd-main-nav__list">
+				<!-- inser more links here -->
+				<li><a class="active" style="color:black;" href="railwayhome.html;">Home</a></li>
+
+
+			</ul>
+		</nav>
+		<nav class="login js-main-nav">
+			<ul class="cd-main-nav__list">
+				<li><a style="color:black;" href="login.html">Login</a></li>
+			</ul>
+		</nav> <!-- cd-main-nav -->
+	</header>
+<br>
+<br>
+<br>
+<br>
+<h3 style="font-size: 55px; text-align:center; font-family: Arial; color: white"><center>List of Students</center></h3>
+
+{% block content %}
+  {% for stud in students %}
+  <ul type="none">
+    <li><h3 style="font-size: 25px; text-align:center; font-family: Arial; color: white" >
+    {{stud.date_of_issue| date:"d-m-Y"}} {{stud.first_name}}
+    <a text-decoration:none; href="/rail/list/profile/{{stud.id}}"</a></h3></li>
+  </ul>
+    {% endfor %}
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Home Page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% load staticfiles %}
+<meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.mySlides {display:none;}
+.container{
+  text-align: center;
+  color: white;
+  }
+  .centered {
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  font-weight:500;
+
+
+  font-size:44px;
+}
+.centered1 {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size:30px;
+
+
+
+
+}
+.button {
+text-decoration:none;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  position:absolute;
+  top:60%;
+  left:45%;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  border: 2px solid #fff;
+
+}
+button:hover{
+text-decoration:none;
+  background-color: #fff;
+  color:black;
+  }
+			/*style.css*/
+			/* --------------------------------
+			Primary style
+			-------------------------------- */
+			*, *::after, *::before {
+			  -webkit-box-sizing: border-box;
+			          box-sizing: border-box;
+			}
+
+			html {
+			  font-size: 62.5%;
+			}
+
+			body {
+			  font-size: 1.6rem;
+			  font-family: "Roboto", sans-serif;
+			  color: #3d3536;
+			  background-color: white;
+			}
+
+			a {
+			  color: #b4d7a8;
+			  text-decoration: none;
+			}
+
+			/* --------------------------------
+			Alternate Fixed & Scroll Backgrounds - by CodyHouse.co
+			-------------------------------- */
+			.cd-main-header {
+			  position: fixed;
+			  top: 0;
+			  left: 0;
+			  width: 100%;
+			  height: 50px;
+			  background-color: #fff;
+			  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+			          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+
+			  z-index: 3;
+			}
+
+			.cd-main-header:after {
+			  /* clearfix */
+			  content: "";
+			  display: table;
+			  clear: both;
+			}
+
+			.cd-main-header__logo {
+			  float: left;
+			  margin: 13px 0 0 5%;
+			}
+
+			.cd-main-header__logo img {
+			  display: block;
+			}
+
+			@media only screen and (min-width: 768px) {
+			  .cd-main-header {
+			    height: 70px;
+			  }
+			  .cd-main-header__logo {
+			    margin: 23px 0 0 5%;
+			  }
+			}
+
+			.cd-main-nav {
+			  float: left;
+			 /* margin-right: 5%;*/
+			  width: 44px;
+			  height: 100%;
+			  background: url("../img/cd-icon-menu.svg") no-repeat center center;
+			  background-size: 44px 44px;
+			  cursor: pointer;
+			  padding-right: 30px !important
+			  ;
+
+			}
+
+			.cd-main-nav__list {
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  width: 100%;
+			  -webkit-transform: translateY(-100%);
+			      -ms-transform: translateY(-100%);
+			          transform: translateY(-100%);
+			}
+
+			.cd-main-nav__list.cd-main-nav__list--is-visible {
+			  -webkit-transform: translateY(50px);
+			      -ms-transform: translateY(50px);
+			          transform: translateY(50px);
+			}
+
+			.cd-main-nav__list a {
+			  display: block;
+			  height: 50px;
+			  line-height: 50px;
+			  padding-left: 5%;
+			  /*background: #2f292a;*/
+			  border-top: 1px solid #453c3d;
+			  /*color: #8e7d7f;*/
+			  color:black;
+			  font-size:20px;
+			}
+
+
+			.login{
+			  float: right;
+			  margin-right: 5%;
+			  width: 44px;
+			  height: 100%;
+			  background: url("../img/cd-icon-menu.svg") no-repeat center center;
+			  background-size: 44px 44px;
+			  cursor: pointer;
+			  /*padding-right: 30px;*/
+			  margin-right: 100px;
+			}
+			@media only screen and (min-width: 768px) {
+			  .cd-main-nav {
+			    /* reset style */
+			    width: auto;
+			    height: auto;
+			    background: none;
+			    cursor: auto;
+			    font-size:15px;
+				color:black;
+			  }
+			  .cd-main-nav__list {
+			    /* reset style */
+			    position: static;
+			    width: auto;
+			    -webkit-transform: translateY(0);
+			        -ms-transform: translateY(0);
+			            transform: translateY(0);
+			    line-height: 70px;
+			  }
+			  .cd-main-nav__list.cd-main-nav__list--is-visible {
+			    /* reset style */
+			    -webkit-transform: translateY(0);
+			        -ms-transform: translateY(0);
+			            transform: translateY(0);
+			  }
+			  .cd-main-nav__list li {
+			    display: inline-block;
+			    margin-left: 1em;
+			  }
+			  .cd-main-nav__list a {
+			    display: inline-block;
+			    height: auto;
+			    line-height: normal;
+			    background: transparent;
+			    padding: .6em 1em;
+			    border-top: none;
+			    color: #3d3536;
+			    text-transform: uppercase;
+			    /*font-weight: bold;*/
+
+			  }
+			  .cd-main-nav__list a:hover {
+			    color: #99a478;
+			  }
+			}
+
+
+
+			html, body, div, span, applet, object, iframe,
+			h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+			a, abbr, acronym, address, big, cite, code,
+			del, dfn, em, img, ins, kbd, q, s, samp,
+			small, strike, strong, sub, sup, tt, var,
+			b, u, i, center,
+			dl, dt, dd, ol, ul, li,
+			fieldset, form, label, legend,
+			table, caption, tbody, tfoot, thead, tr, th, td,
+			article, aside, canvas, details, embed,
+			figure, figcaption, footer, header, hgroup,
+			menu, nav, output, ruby, section, summary,
+			time, mark, audio, video {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				font-size: 100%;
+				font: inherit;
+				vertical-align: baseline;
+			}
+			/* HTML5 display-role reset for older browsers */
+			article, aside, details, figcaption, figure,
+			footer, header, hgroup, menu, nav, section, main {
+				display: block;
+			}
+			body {
+				line-height: 1;
+			}
+			ol, ul {
+				list-style: none;
+			}
+			blockquote, q {
+				quotes: none;
+			}
+			blockquote:before, blockquote:after,
+			q:before, q:after {
+				content: '';
+				content: none;
+			}
+			table {
+				border-collapse: collapse;
+				border-spacing: 0;
+			}
+			/*demo.css*/
+			/* demo style */
+
+			.mySlides {display:none;}
+.container{
+  text-align: center;
+  color: white;
+  }
+  .centered {
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  font-weight:500;
+
+
+  font-size:44px;
+}
+.centered1 {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size:30px;
+
+
+
+
+}
+.button {
+text-decoration:none;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  position:absolute;
+  top:60%;
+  left:45%;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  border: 2px solid #fff;
+
+}
+button:hover{
+text-decoration:none;
+  background-color: #fff;
+  color:black;
+  }
+
+
+
+
+			.fa {
+			  padding: 20px;
+			  font-size: 30px;
+			  width: 50px;
+			  text-align: center;
+			  text-decoration: none;
+			  margin: 5px 2px;
+			}
+
+			.fa:hover {
+			    opacity: 0.7;
+			}
+
+
+.mySlides {display:none}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
+
+.mySlides {display:none;}
+.container{
+  text-align: center;
+  color: white;
+  }
+  .centered {
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  font-weight:500;
+
+
+  font-size:44px;
+}
+.centered1 {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size:30px;
+
+
+
+
+}
+.button {
+text-decoration:none;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  position:absolute;
+  top:60%;
+  left:45%;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  border: 2px solid #fff;
+
+}
+button:hover{
+text-decoration:none;
+  background-color: #fff;
+  color:black;
+  }
+
+	.cd-fixed-bg {
+			  position: relative;
+			  min-height: 100vh;
+			  background-size: cover;
+			  background-repeat: no-repeat;
+			  background-position: center center;
+			  z-index: 1;
+			}
+
+			.cd-fixed-bg__content, .cd-fixed-bg h2 {
+			  position: absolute;
+			  left: 50%;
+			  top: 50%;
+			  bottom: auto;
+			  right: auto;
+			  -webkit-transform: translateX(-50%) translateY(-50%);
+			      -ms-transform: translateX(-50%) translateY(-50%);
+			          transform: translateX(-50%) translateY(-50%);
+			  width: 90%;
+			  max-width: 1170px;
+			  margin: 0 auto;
+			  text-align: center;
+			  font-size: 3rem;
+			}
+
+			.cd-fixed-bg h1, .cd-fixed-bg h2 {
+			  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+			  color: white;
+
+			}
+
+			.cd-fixed-bg.cd-fixed-bg--1 {
+			  background-image: url('{% static "college/train.jpeg" %}');
+			}
+
+			.cd-fixed-bg.cd-fixed-bg--2 {
+			  background-image: url("img2.png");
+			}
+
+			.cd-fixed-bg.cd-fixed-bg--4 {
+			  background-image: url("img3.jpg");
+			}
+			.cd-fixed-bg.cd-fixed-bg--3 {
+			  background-image: url("img7.png");
+			}
+			.button {
+			  background-color: #4CAF50; /* Green */
+			  border: none;
+			  color: white;
+			  padding: 15px 32px;
+			  text-align: center;
+			  text-decoration: none;
+			  position:absolute;
+			  top:60%;
+			  left:45%;
+			  font-size: 16px;
+			  margin: 4px 2px;
+			  cursor: pointer;
+			  background-color: transparent;
+			  color: white;
+			  border: 2px solid #fff;
+			}
+			button:hover{
+			  background-color: #fff;
+			  color:black;
+			  }
+
+
+
+
+			@media only screen and (min-width: 768px) {
+			  .cd-fixed-bg h1, .cd-fixed-bg h2 {
+			    font-size: 3.6rem;
+			  }
+			}
+
+			@media only screen and (min-width: 1170px) {
+			  .cd-fixed-bg h1, .cd-fixed-bg h2 {
+			    font-size: 4.8rem;
+			    font-weight: 300;
+			  }
+			  @supports (background-attachment: fixed) {
+			    /* fix bug on IE11 and below */
+			    .cd-fixed-bg {
+			      background-attachment: fixed;
+			    }
+			  }
+			}
+
+			.cd-scrolling-bg {
+			  position: relative;
+			  min-height: 100%;
+			  padding: 4em 0;
+			  line-height: 1.6;
+			  -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+			          box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+			  z-index: 2;
+			}
+
+			.cd-scrolling-bg.cd-scrolling-bg--color-1 {
+			  background-color: white;
+			  color: #a6989a;
+			}
+
+			.cd-scrolling-bg.cd-scrolling-bg--color-2 {
+			  background-color: #4776C6
+			  color: #3d3536;
+			}
+
+			.cd-scrolling-bg.cd-scrolling-bg--color-3 {
+			  background-color:white;
+			  color: #3d3536;
+			}
+
+			.cd-scrolling-bg__content {
+			  width: 90%;
+			  max-width: 768px;
+			  margin-left:100px;
+			  margin-top:0px;
+			  padding-bottom:0px;
+
+			}
+
+			@media only screen and (min-width: 768px) {
+			  .cd-scrolling-bg {
+			    padding: 8em 0;
+			    font-size: 2rem;
+			    line-height: 2;
+			    font-weight: 300;
+			  }
+			}
+.fa {
+			  padding: 20px;
+			  font-size: 30px;
+			  width: 50px;
+			  text-align: center;
+			  text-decoration: none;
+			  margin: 5px 2px;
+			}
+			.fa:hover {
+			    opacity: 0.7;
+			}
+			.flex-container > div {
+			  background-color: #f1f1f1;
+			  opacity:0.5;
+			  width: 25%;
+			  margin: 30px;
+			  text-align: center;
+			  line-height: 600px;
+			  font-size: 20px;
+
+			  }
+			.flex-container {
+  display: flex;
+  justify-content: center;
+  margin-top:5%;
+
+}
+			.flex-container > div {
+			 /* background-color: #fff;*/
+			  opacity:0.5;
+
+
+			  text-align: center;
+
+			  font-size: 20px;
+
+			  }
+			.flex-container {
+  display: flex;
+  justify-content: center;
+  margin-top:5%;
+
+}
+.card {
+  box-shadow: 0 8px 8px 0 rgba(88,88,88,0.2);
+  transition: 0.3s;
+  background-color: #fff;
+  height:350px;
+}
+
+.card:hover {
+  box-shadow: 0 16px 32px 0 rgba(88,88,88,0.2);
+}
+</style>
+</head>
+
+<body>
+  <div style="height:30px;width:100%;margin-top:70px;background-color:black;text-align:center;color:white;font-size:26px;"><marquee direction="right">Toll free no : +91-4045967100</marquee></div>
+  <script>
+        window.onload = function () {
+
+            var chart = new CanvasJS.Chart("chartContainer2", {
+                animationEnabled: true,
+                theme: "light2", // "light1", "light2", "dark1", "dark2"
+                title: {
+                    text: "Concession form Application Statistics"
+                },
+                axisY: {
+                    title: "Number of Applications (in %)",
+                    suffix: "%",
+                    includeZero: false
+                },
+                axisX: {
+                    title: "Colleges"
+                },
+                data: [{
+                    type: "column",
+                    yValueFormatString: "#,##0.0#\"%\"",
+                    dataPoints: [
+                        { label: "VJTI", y: 3.1 },
+                        { label: "DJSCOE", y:9.70 },
+                        { label: "SPIT", y: 5.00 },
+                        { label: "KJSCE", y: 2.50 },
+                        { label: "IIT-B", y: 2.30 },
+                        { label: "SAKEC", y: 1.80 },
+                        { label: "TSEC", y: 1.60 },
+                        { label: "VESIT", y: 1.60 }
+
+                    ]
+                }]
+            });
+            chart.render();
+
+        }
+
+
+
+
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 3000); // Change image every 2 seconds
+}
+			// main.js
+			(function(){
+		    // Alternate Fixed & Scroll Backgrounds - by CodyHouse.co
+			// toggle main navigation on mobile
+			var mainNav = document.getElementsByClassName('js-main-nav')[0];
+			if(mainNav) {
+				mainNav.addEventListener('click', function(event){
+					if( hasClass(event.target, 'js-main-nav') ){
+						var navList = mainNav.getElementsByTagName('ul')[0];
+						toggleClass(navList, 'cd-main-nav__list--is-visible', !hasClass(navList, 'cd-main-nav__list--is-visible'));
+					}
+				});
+			}
+
+			//class manipulations - needed if classList is not supported
+			function hasClass(el, className) {
+			  	if (el.classList) return el.classList.contains(className);
+			  	else return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'));
+			}
+			function addClass(el, className) {
+				var classList = className.split(' ');
+			 	if (el.classList) el.classList.add(classList[0]);
+			 	else if (!hasClass(el, classList[0])) el.className += " " + classList[0];
+			 	if (classList.length > 1) addClass(el, classList.slice(1).join(' '));
+			}
+			function removeClass(el, className) {
+				var classList = className.split(' ');
+			  	if (el.classList) el.classList.remove(classList[0]);
+			  	else if(hasClass(el, classList[0])) {
+			  		var reg = new RegExp('(\\s|^)' + classList[0] + '(\\s|$)');
+			  		el.className=el.className.replace(reg, ' ');
+			  	}
+			  	if (classList.length > 1) removeClass(el, classList.slice(1).join(' '));
+			}
+			function toggleClass(el, className, bool) {
+				if(bool) addClass(el, className);
+				else removeClass(el, className);
+			}
+			})();
+
+
+        window.onload = function () {
+
+            var chart = new CanvasJS.Chart("chartContainer1", {
+                animationEnabled: true,
+                title:{
+                    text: "Coursewise Distribution",
+                    horizontalAlign: "left"
+                },
+                data: [{
+                    type: "doughnut",
+                    startAngle: 60,
+                    //innerRadius: 60,
+                    indexLabelFontSize: 17,
+                    indexLabel: "{label} - #percent%",
+                    toolTipContent: "<b>{label}:</b> {y} (#percent%)",
+                    dataPoints: [
+                        { y: 67, label: "Computer Engineering" },
+                        { y: 28, label: "Mechanical Engineering" },
+                        { y: 10, label: "Chemical Engineering" },
+                        { y: 7, label: "Information Technology"},
+                        { y: 15, label: "Electronics Engineering"},
+                        { y: 6, label: "Biomedical Engineering"}
+                    ]
+                }]
+            });
+            chart.render();
+
+        }
+    </script>
+<header class="cd-main-header">
+		<!-- logo <div class="cd-main-header__logo"><a href="#0"><img src="cd-logo.png" alt="Logo"></a></div>-->
+
+		<nav class="cd-main-nav js-main-nav">
+			<ul class="cd-main-nav__list">
+				<!-- inser more links here -->
+				<li><a class="active" style="color:black;" href="railwayhome.html"><img src="{% static 'college/emblem.png' %}" width="50px" height="50px"></a></li>
+				<li><a class="active" style="color:black; font-size:10px ;padding-left:0px;padding-bottom:40px" href="http://127.0.0.1:8000/college/hp/login">Government of India</a></li>
+
+			</ul>
+		</nav>
+		<nav class="login js-main-nav">
+			<ul class="cd-main-nav__list">
+				<li><a style="color:black;" href="http://127.0.0.1:8000/college/hp/login">Login</a></li>
+			</ul>
+		</nav> <!-- cd-main-nav -->
+	</header>
+
+
+	<div class="cd-fixed-bg cd-fixed-bg--1">
+
+			<div class="cd-fixed-bg__content">
+
+				<!-- <a class="cd-nugget-info" href="https://codyhouse.co/gem/alternate-fixed-scroll-backgrounds/">
+					<span>
+						<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
+							<style type="text/css">
+								.cd-nugget-info-arrow{fill:#383838;}
+							</style>
+							<polygon class="cd-nugget-info-arrow" points="15,7 4.4,7 8.4,3 7,1.6 0.6,8 0.6,8 0.6,8 7,14.4 8.4,13 4.4,9 15,9 "/>
+						</svg>
+					</span>
+					Article &amp; Download
+				</a> -->
+			</div>
+		</div> <!-- cd-fixed-bg -->
+
+		<div class="cd-scrolling-bg cd-scrolling-bg--color-2" style="background-color:#4776C6"">
+			<div class="cd-scrolling-bg__content">
+				<p>
+				<div style="margin-top:-125px;">
+				<p style="color:white;">News regarding Indian Railways </p>
+				<p style="color:white;font-size:20px;margin-right:100px;">The air-conditioned train halts at Churchgate, Mumbai Central, Dadar, Bandra, Andheri, Borivali, Bhayander, Vasai and Virar. From November 1, the AC local is likely to also halt at seven more railway stations: Marine Lines, Charni Road, Grant Road, Dahisar, Mira Road, Naigaon, Nallasopara. Perhaps to make up for the additional journey time, the top speed of the train will be bumped up from 70km/hr to 90km/hr.</p>
+				</div>
+					<div style="font-size:80px;position:absolute;top:18%;left:53%;">
+
+					<iframe width="420" height="345" src="https://www.youtube.com/embed/9hTLQnEqvIM">
+</iframe>
+				</div>
+
+				</p>
+			</div> <!-- cd-scrolling-bg__content -->
+		</div> <!-- cd-scrolling-bg -->
+<!-- cd-fixed-bg -->
+
+		<div class="cd-scrolling-bg cd-scrolling-bg--color-3" style="padding-top:5px;padding-bottom:10px;padding-left:250px;padding-right:10px";>
+			<div class="cd-scrolling-bg__content">
+
+
+					<div class="flex-container " >
+	  <div class="card" style="width:300%">
+	  <div id="chartContainer2" style="height: 300px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+	  </div>
+
+
+
+
+	</div>
+
+
+
+			</div> <!-- cd-scrolling-bg__content -->
+		</div> <!-- cd-scrolling-bg -->
+
+		<!-- <div class="cd-fixed-bg cd-fixed-bg--3">
+			<h2>Lorem ipsum dolor sit amet.</h2>
+		</div> --> <!-- cd-fixed-bg -->
+		<!-- cd-fixed-bg -->
+		<div class="cd-scrolling-bg cd-scrolling-bg--color-1" style="background-color:#4776C6;padding-top:100px;height:600px;">
+			<div class="cd-scrolling-bg__content">
+				<p>
+					<div style="font-size:80px;position:absolute;top:30%;left:23%;">
+
+
+					<div class="flex-container " >
+
+
+
+	 <div style="height:300px;margin-top:-150px;margin-left:-100px;">
+	 <blockquote class="twitter-tweet" data-lang="en" style="height:50px"><p lang="en" dir="ltr"> <a href="https://t.co/QhOdS316go">https://t.co/QhOdS316go</a> <a href="https://t.co/MnVpWqvhqt">pic.twitter.com/MnVpWqvhqt</a></p>&mdash; IRCTC (@IRCTCofficial) <a href="https://twitter.com/IRCTCofficial/status/1084761604439400448?ref_src=twsrc%5Etfw">January 14, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+	   <div style="height:300px;margin-top:-150px;">
+	   <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">??????????? ?? ??? ?? ?????: Income tax rebate announced in Budget 2019 will benefit over 8 lakh Railways employees<a href="https://t.co/XX8B9hJUBM">https://t.co/XX8B9hJUBM</a> <a href="https://t.co/CTiNGnkaF0">pic.twitter.com/CTiNGnkaF0</a></p>&mdash; Piyush Goyal (@PiyushGoyal) <a href="https://twitter.com/PiyushGoyal/status/1094233315878543360?ref_src=twsrc%5Etfw">February 9, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+	   </div>
+
+	</div>
+				</div>
+
+				</p>
+			</div> <!-- cd-scrolling-bg__content -->
+		</div> <!-- cd-scrolling-bg -->
+		<!-- cd-fixed-bg -->
+
+		<footer style="height:120px;background-color:black;">
+			<i class="fa fa-facebook" style="font-size:30px;text-align: center;;;margin-left: 700px"></i>
+			<i class="fa fa-instagram" style="font-size:30px;margin-left: -10px;"></i>
+			<i class="fa fa-twitter" style="font-size:36px;margin-left: -10px"></i>
+			<p style="text-align: center;font-size:25px;color:white">Railway Student Concession, Copyright &copy; 2019<p>
+		</footer>
+</body>
+</html>
