@@ -21,7 +21,7 @@ django-model-utils==1.2.0
 django-multiforloop==0.2.1
 django-social-auth==0.7.22
 html5lib==0.95
-httplib2==0.8
+httplib2==0.18.0
 kombu==2.5.7
 logilab-astng==0.24.2
 logilab-common==0.59.0
