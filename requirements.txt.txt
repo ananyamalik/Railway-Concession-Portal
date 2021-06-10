@@ -1,5 +1,5 @@
 numpy==1.6.2
-Django==2.1.5
+Django==2.2.24
 django-tastypie==0.9.14
 urllib3==1.5
 pyes==0.19.1
